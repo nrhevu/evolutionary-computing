@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from src.representation import Individual, Permutation_representation
-from src.task import Task
+from src.modeling.representation import Individual, Permutation_representation
+from src.modeling import Task
 
 
 class City:

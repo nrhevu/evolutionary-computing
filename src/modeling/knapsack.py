@@ -1,5 +1,5 @@
-from src.representation import Individual
-from src.task import Task
+from src.modeling.representation import Individual
+from src.modeling import Task
 
 
 class Item:

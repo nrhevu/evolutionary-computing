@@ -1,7 +1,7 @@
 import os
 from abc import abstractmethod
 
-from src.representation import Representation
+from src.modeling.representation import Representation
 
 
 class Task:

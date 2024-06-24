@@ -1,7 +1,7 @@
 from typing import List
 
-from src.representation import Individual, Representation
-from src.task.task import Task
+from src.modeling.representation import Individual, Representation
+from src.modeling.task import Task
 
 
 class Population:
