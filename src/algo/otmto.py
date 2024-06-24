@@ -6,7 +6,7 @@ from scipy.stats import norm
 
 from src.algo.de import DE
 from src.modeling.population import Population
-from src.modeling.representation import Individual, Real_value_representation
+from src.modeling.representation import Individual, RealValueRepresentation
 from src.utils import crossover, new_generation_selection
 from src.utils.math import KL, norm_2
 
@@ -25,7 +25,7 @@ class OTMTO:
     def __init__(
         self,
         tasks,
-        representation=Real_value_representation,
+        representation=RealValueRepresentation,
         p_OT_i_j=0.5,
         p_CDT_i_j=0.5,
         maxFE_n=5,
@@ -359,7 +359,7 @@ class OTMTO:
                 Population(
                     n_individuals,
                     self.tasks[k],
-                    representation=Real_value_representation,
+                    representation=RealValueRepresentation,
                 )
             )
         for k in range(len(self.tasks)):

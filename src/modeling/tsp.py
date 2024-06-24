@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from src.modeling.representation import Individual, Permutation_representation
 from src.modeling import Task
+from src.modeling.representation import Individual, PermutationRepresentation
 
 
 class City:
@@ -57,7 +57,7 @@ class TSP(Task):
         else:
             gene = individual
 
-        if self.representation == Permutation_representation:
+        if self.representation == PermutationRepresentation:
             return gene
         else:
             length_gene = len(gene)

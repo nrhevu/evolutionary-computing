@@ -37,7 +37,7 @@ class Representation:
 
 
 ## PERMUTATION
-class Permutation_representation(Representation):
+class PermutationRepresentation(Representation):
     @staticmethod
     def random(length_gene):
         return random.sample([i for i in range(1, length_gene + 1)], length_gene)
@@ -92,7 +92,7 @@ class Permutation_representation(Representation):
 
 
 # REAL-VALUE
-class Real_value_representation(Representation):
+class RealValueRepresentation(Representation):
     @staticmethod
     def random(length_gene):
         g = list()
@@ -161,7 +161,7 @@ class Real_value_representation(Representation):
 
 
 ## IDPCDU
-class IDPCDU_representation(Representation):
+class IDPCDURepresentation(Representation):
     @staticmethod
     def random(length_gene):
         g = [[] for i in range(2)]

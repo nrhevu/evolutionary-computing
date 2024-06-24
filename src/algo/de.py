@@ -3,7 +3,7 @@ from random import random
 import numpy as np
 from matplotlib import pyplot as plt
 
-from src.modeling.representation import Individual, Real_value_representation
+from src.modeling.representation import Individual, RealValueRepresentation
 from src.utils import crossover, mutation, new_generation_selection
 
 
@@ -16,7 +16,7 @@ def DE(
     prob_mutation=0.1,
     plot_progress=True,
 ):
-    if representation != Real_value_representation:
+    if representation != RealValueRepresentation:
         raise (Exception("No"))
 
     gen = 1
