@@ -5,10 +5,10 @@ import numpy as np
 from scipy.stats import norm
 
 from src.algo.de import DE
-from src.modeling.population import Population
+from src.modeling.population import MFEAPopulation
 from src.modeling.representation import Individual, RealValueRepresentation
 from src.utils import crossover, new_generation_selection
-from src.utils.math import KL, norm_2
+from src.utils.math import kl_divergence, norm_2
 
 x = np.arange(-10, 10, 0.001)
 
@@ -49,7 +49,7 @@ class OTMTO:
             total_dimension += task.dimension
         self.maxFE = maxFE_n * total_dimension
 
-    def CTM(self, task_i, task_j, nb, pop_i: Population, pop_j: Population):
+    def CTM(self, task_i, task_j, nb, pop_i: MFEAPopulation, pop_j: MFEAPopulation):
         INFE = 0
         maxINFE = 10
         inps = 10
@@ -62,7 +62,7 @@ class OTMTO:
         x_gb_j = pop_j.individuals[0]
 
         # Initialize the population as the inps best individuals in pop_i;
-        pop_map = Population(
+        pop_map = MFEAPopulation(
             n_individual=inps, task=pop_i.task, representation=pop_i.representation
         )
         pop_map.individuals = pop_i.sort()[:inps]
@@ -322,7 +322,7 @@ class OTMTO:
             for k in range(D_j):
                 p = norm.pdf(x, ctr_i[d], std_i[d])
                 q = norm.pdf(x, ctr_j[k], std_j[k])
-                sim_k = max(1 / (KL(p, q) + epsilon), 0.001)
+                sim_k = max(1 / (kl_divergence(p, q) + epsilon), 0.001)
                 sim.append(sim_k)
             sum_sim = sum(sim)
             for k in range(D_j):
@@ -356,7 +356,7 @@ class OTMTO:
         pop = []
         for k in range(len(self.tasks)):
             pop.append(
-                Population(
+                MFEAPopulation(
                     n_individuals,
                     self.tasks[k],
                     representation=RealValueRepresentation,

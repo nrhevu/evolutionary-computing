@@ -10,5 +10,5 @@ def norm_2(arr_1, arr_2):
         result += (arr_1[i] - arr_2[i]) ** 2
     return math.sqrt(result)
 
-def KL(p, q):
+def kl_divergence(p, q):
     return np.sum(np.where(p != 0, p * np.log(p / q), 0))
