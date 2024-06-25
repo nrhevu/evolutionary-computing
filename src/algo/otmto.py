@@ -7,7 +7,7 @@ from scipy.stats import norm
 from src.algo.de import DE
 from src.modeling.population import MFEAPopulation
 from src.modeling.representation import Individual, RealValueRepresentation
-from src.utils import crossover, new_generation_selection
+from src.utils.operator import crossover, new_generation_selection
 from src.utils.math import kl_divergence, norm_2
 
 x = np.arange(-10, 10, 0.001)

@@ -2,7 +2,7 @@ from random import random
 
 from matplotlib import pyplot as plt
 
-from src.utils import crossover, mutation, new_generation_selection
+from src.utils.operator import crossover, mutation, new_generation_selection
 
 
 def GA(population, n_gen, task, representation, prob_mutation=0.1, plot_progress=True):

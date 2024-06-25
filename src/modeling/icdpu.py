@@ -1,5 +1,5 @@
 from src.modeling.representation import Individual
-from src.modeling import Task
+from src.modeling.task import Task
 
 
 class Edge:

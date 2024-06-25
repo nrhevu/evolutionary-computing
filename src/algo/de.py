@@ -4,7 +4,7 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 from src.modeling.representation import Individual, RealValueRepresentation
-from src.utils import crossover, mutation, new_generation_selection
+from src.utils.operator import crossover, mutation, new_generation_selection
 
 
 def DE(

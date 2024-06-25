@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-from src.modeling import Task
+from src.modeling.task import Task
 from src.modeling.representation import Individual, PermutationRepresentation
 
 
