@@ -7,3 +7,7 @@ Original OTMTO method paper references link: https://www.researchgate.net/public
 
 ## How to run
 Checkout the test.jpynb for running code
+
+## More settings
+In our implementation, we intalled various representation method for the problems: Real-value, permutation, binning, icdpu
+
