@@ -68,7 +68,7 @@ class MFEAPopulation:
     individuals: list
     tasks: list
 
-    def __init__(self, n_individual: int, tasks: List, representation: Representation):
+    def __init__(self, n_individual: int, tasks: list, representation: Representation):
         self.n_individual = n_individual
         self.n_task = len(tasks)
         self.tasks = tasks
