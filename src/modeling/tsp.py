@@ -110,6 +110,12 @@ class TSP(Task):
 
     def compute_distance(self, individual):
         return -self.compute_fitness(individual)
+    
+    def make_individual_valid(self, gene):
+        pass
+
+    def check_individual_valid(self, gene):
+        return False
 
     def get_len_gene(self):
         return self.dimension

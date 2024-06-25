@@ -79,6 +79,19 @@ class Knapsack(Task):
 
     def get_len_gene(self):
         return self.dimension
+    
+    def check_individual_valid(self, gene):
+        # solution = self.decode(individual)
+        # result = 0
+        # for i in range(len(solution)):
+        #     result +=  self.items_list[i].weight * solution[i]
+        #
+        # return not (result <= capacity)
+
+        return False
+
+    def make_individual_valid(self, gene):
+        pass
 
     def show_result(self, individual):
         solution = self.decode(individual)

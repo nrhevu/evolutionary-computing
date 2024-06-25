@@ -1,6 +1,7 @@
 from typing import List
 
-from src.modeling.representation import Individual, Representation
+from src.modeling.representation import (Individual, MFEAIndividual,
+                                         Representation)
 from src.modeling.task import Task
 
 
@@ -95,7 +96,7 @@ class MFEAPopulation:
             for task in self.tasks:
                 fitness_tasks.append(task.compute_fitness(g))
 
-            individual = Individual(g, fitness_tasks)
+            individual = MFEAIndividual(g, fitness_tasks)
             individuals.append(individual)
         # update individuals
         self.individuals = individuals
