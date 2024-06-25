@@ -21,6 +21,26 @@ class Individual:
             + "]"
         )
 
+class MFEAIndividual():
+    gene : list
+    fitness_task : list
+    factorial_rank : list
+    skill_factor : int
+    scalar_fitness : float
+
+    def __init__(self, gene, fitness_task):
+        self.gene = gene
+        self.fitness_task = fitness_task
+        self.factorial_rank = [999999999 for i in range(20)]
+        self.scalar_fitness = 0.0
+
+    def get_min_factorial_rank(self):
+        return min(self.factorial_rank)
+
+    def __repr__(self) -> str:
+        return "Individual [gene=" + str(self.gene) + ", fitness_task=" + str(self.fitness_task) \
+                + ", factorialRank=" + str(self.factorial_rank) + ", skillFactor="        \
+                + str(self.skill_factor) + ", scalarFitness=" + str(self.scalar_fitness) + "]"
 
 class Representation:
     @abstractmethod
@@ -159,6 +179,41 @@ class RealValueRepresentation(Representation):
 
         return child
 
+class BinRepresentation(Representation):
+    @staticmethod
+    def random(length_gene):
+        n = random.randint(1, length_gene)
+        g = [[] for i in range(n)]
+        for i in random.sample([i for i in range(1, length_gene + 1)], length_gene):
+            pos = random.randint(1, n)
+            g[pos].append(i)
+        # remove empty bin
+        for i in range(n - 1, -1, -1):
+            if len(g[i]) == 0:
+                g.pop(i)
+
+        return g
+
+
+    @staticmethod
+    def crossover(individual_a, individual_b):
+        # random crossover point for p1
+        length_gene_1 = len(individual_a.gene)
+
+        p1_start = int(np.random.randint(0, length_gene_1 - 1))
+        p1_end = int(np.random.randint(p1_start + 1, length_gene_1))
+        # random crossover point for p2
+        length_gene_2 = len(individual_a.gene)
+
+        p2_start = int(np.random.randint(0, length_gene_2 - 1))
+        p2_end = int(np.random.randint(p1_start + 1, length_gene_2))
+
+        # making children
+
+
+    @staticmethod
+    def mutation(individual, nu=20):
+        pass
 
 ## IDPCDU
 class IDPCDURepresentation(Representation):

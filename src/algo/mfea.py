@@ -1,11 +1,11 @@
-from random import random
+import random
 from typing import List
 
 import numpy as np
 from matplotlib import pyplot as plt
 
 from src.modeling.population import MFEAPopulation
-from src.modeling.representation import Individual, Representation
+from src.modeling.representation import MFEAIndividual, Representation
 
 
 class MFEA:
@@ -147,7 +147,7 @@ class MFEA:
         if self.population.check_individual_valid(child_1):
             self.population.make_individual_valid(child_1)
         # produce child 1
-        ind = Individual(child_1, None)
+        ind = MFEAIndividual(child_1, None)
         rand = random.random()
 
         # set skill factor for chil
@@ -171,7 +171,7 @@ class MFEA:
             self.population.make_individual_valid(child_2)
 
         # produce child 2
-        ind2 = Individual(child_2, None)
+        ind2 = MFEAIndividual(child_2, None)
         rand = random.random()
 
         # set skill factor for chil
@@ -204,7 +204,7 @@ class MFEA:
         if self.population.check_individual_valid(gene):
             self.population.make_individual_valid(gene)
         # produce child 1
-        ind = Individual(gene, None)
+        ind = MFEAIndividual(gene, None)
         rand = random.random()
 
         # set skill factor
