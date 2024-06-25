@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
+from src.modeling.representation import (Individual, MFEAIndividual,
+                                         PermutationRepresentation)
 from src.modeling.task import Task
-from src.modeling.representation import Individual, PermutationRepresentation
 
 
 class City:
@@ -52,7 +53,7 @@ class TSP(Task):
         # decode from numeric encode, the index of iterator in sorted array
         # by acsending order represents the solution
 
-        if isinstance(individual, Individual):
+        if isinstance(individual, Individual) or isinstance(individual, MFEAIndividual):
             gene = individual.gene
         else:
             gene = individual

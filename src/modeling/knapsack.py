@@ -1,4 +1,4 @@
-from src.modeling.representation import Individual
+from src.modeling.representation import Individual, MFEAIndividual
 from src.modeling.task import Task
 
 
@@ -34,7 +34,7 @@ class Knapsack(Task):
             self.items_list.append(Item(id + 1, weight, value))
 
     def decode(self, individual):
-        if isinstance(individual, Individual):
+        if isinstance(individual, Individual) or isinstance(individual, MFEAIndividual):
             gene = individual.gene
         else:
             gene = individual

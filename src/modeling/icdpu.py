@@ -1,4 +1,4 @@
-from src.modeling.representation import Individual
+from src.modeling.representation import Individual, MFEAIndividual
 from src.modeling.task import Task
 
 
@@ -69,7 +69,7 @@ class IDPCDU(Task):
         self.graph = graph_d
 
     def decode(self, individual):
-        if isinstance(individual, Individual):
+        if isinstance(individual, Individual) or isinstance(individual, MFEAIndividual):
             gene = individual.gene
         else:
             gene = individual
